@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface Props {
+    background: string,
+    cardText: TextColors[],
+    icon: Icon,
+    href: string,
+}
+type Icon = {
+    pack: string,
+    name: string,
+    cssClasses: string,
+}
+type TextColors = {
+    text: string;
+    lineBreak: boolean,
+    cssClasses?: string;
+}
+const { background, cardText, icon, href } = Astro.props;
+---
+
+<a class={`flex flex-wrap justify-center items-center rounded-2xl w-56 h-44 p-4 relative cursor-pointer border-2
+    border-white card ${background}`} href={href}>
+    <Icon class={`absolute -top-6 left-4 w-12 h-12 ${icon.cssClasses}`} pack={icon.pack} name={icon.name}></Icon>
+    <p class="font-extrabold leading-none mainText">
+        {cardText.map((text: TextColors, index: number) => (
+        <span class={`${text.cssClasses}`}>
+            {text.text} {text.lineBreak && <br />}
+        </span>
+        ))}
+    </p>
+</a>
+
+<style>
+    .mainText {
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .card {
+        box-shadow: 0px 1.95604px 1.95604px rgba(0, 0, 0, 0.25);
+    }
+</style>

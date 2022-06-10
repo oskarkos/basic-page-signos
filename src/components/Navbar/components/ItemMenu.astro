@@ -1,0 +1,10 @@
+---
+export interface Props {
+    label: string,
+    href: string,
+    isLink?: boolean,
+}
+const { label, href, isLink } = Astro.props;
+---
+
+<a href={href} target={isLink && '_blank' } class="font-gotham font-bold uppercase text-white">{label}</a>

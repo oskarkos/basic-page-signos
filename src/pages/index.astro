@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar/index.astro';
+import ShapeFrames from '../components/ShapeFrames/index.vue';
+import FeatureCard from '../components/FeatureCard/index.astro';
+import ContentCard from '../components/ContentCard/index.astro';
+import { Icon } from 'astro-icon'
+
+type TextColors = {
+	text: string;
+	lineBreak: boolean,
+	cssClasses?: string;
+}
+
+const mainText: TextColors[] = [{
+	text: 'Art',
+	cssClasses: 'text-[#EFCD4C] text-[5.626rem]',
+	lineBreak: false,
+},
+{
+	text: 'and',
+	cssClasses: 'text-white text-[5rem]',
+	lineBreak: false,
+},
+{
+	text: 'fun',
+	cssClasses: 'text-[#E41F89] text-[5.626rem]',
+	lineBreak: true,
+},
+{
+	text: 'at the same',
+	cssClasses: 'text-white text-[5rem]',
+	lineBreak: true,
+},
+{
+	text: 'place.',
+	cssClasses: 'text-[#24E0EC] text-[6rem]',
+	lineBreak: false,
+}];
+
+const slides = [
+	"/src/assets/img/PAGINA_01.gif",
+	"/src/assets/img/PAGINA_02.gif",
+	"/src/assets/img/PAGINA_03.gif",
+	"/src/assets/img/PAGINA_04.gif",
+	"/src/assets/img/PAGINA_05.gif",
+	"/src/assets/img/PAGINA_06.gif",
+	"/src/assets/img/PAGINA_07.gif"
+];
+
+const dataCardOne = [
+	{
+		text: "Art",
+		cssClasses: "text-[#6F55A5] text-[3rem]",
+		lineBreak: false,
+	},
+	{
+		text: "and",
+		cssClasses: "text-[#6F55A5] text-[2rem]",
+		lineBreak: true,
+	},
+	{
+		text: "Design",
+		cssClasses: "text-[#6F55A5] text-[3rem]",
+		lineBreak: false,
+	},
+];
+const dataCardTwo = [
+	{
+		text: "3D",
+		cssClasses: "text-[#E31B6F] text-[3rem]",
+		lineBreak: false,
+	},
+	{
+		text: "style",
+		cssClasses: "text-[#E31B6F] text-[2rem]",
+		lineBreak: true,
+	},
+	{
+		text: "Look",
+		cssClasses: "text-[#E31B6F] text-[3rem]",
+		lineBreak: false,
+	},
+];
+const dataCardThree = [
+	{
+		text: "Classical",
+		cssClasses: "text-[#1D641B] text-[2rem]",
+		lineBreak: false,
+	},
+	{
+		text: "and",
+		cssClasses: "text-[#1D641B] text-[1rem]",
+		lineBreak: true,
+	},
+	{
+		text: "Symphonic",
+		cssClasses: "text-[#1D641B] text-[2rem]",
+		lineBreak: true,
+	},
+	{
+		text: "Music",
+		cssClasses: "text-[#1D641B] text-[3rem]",
+		lineBreak: false,
+	},
+];
+const dataCardFour = [
+	{
+		text: "We",
+		cssClasses: "text-[#3858AD] text-[3rem]",
+		lineBreak: false,
+	},
+	{
+		text: "are",
+		cssClasses: "text-[#3858AD] text-[2rem]",
+		lineBreak: true,
+	},
+	{
+		text: "Basic",
+		cssClasses: "text-[#3858AD] text-[3rem]",
+		lineBreak: false,
+	},
+];
+const iconCardOne = {
+	pack: 'ic',
+	name: 'baseline-color-lens',
+	cssClasses: 'text-[#6F55A5] rotate-270'
+}
+const iconCardTwo = {
+	pack: 'ic',
+	name: 'baseline-water-drop',
+	cssClasses: 'text-[#E31B6F]'
+}
+const iconCardThree = {
+	pack: 'bi',
+	name: 'music-note',
+	cssClasses: 'text-[#1D641B]'
+}
+const iconCardFour = {
+	pack: 'mdi',
+	name: 'account',
+	cssClasses: 'text-[#3858AD]'
+}
+
+const contentCards = [
+	{
+		text: 'BASIC is a program which objective is to identify the main basic design concepts that you can find in art and nature, and that are a fundamental part of any creation. Additionally, relevant artists, artworks and its movements were selected in order to easily identify some concepts of design.',
+		image: '/src/assets/content/ART_01.gif',
+		type: 'row',
+	},
+	{
+		text: 'The project is developed in 3D digital animation. The characters do not have mouth, for this reason, their expressions will be recognized through the movement of their eyebrows, eyes and body gestures. Their bodies are constituted of basic shapes such as spheres, cubes and cylinders in bright and cheerful colors.',
+		image: '/src/assets/content/3D_STYLE_01.gif',
+		type: 'columnReverse',
+	},
+	{
+		text: 'BASIC has a symphonic musical treatment, mainly winds  and strings instruments, which brings each episode a magical personality, body, volume and will mainly improve the emotions of all audiences.',
+		image: '/src/assets/content/SINFONICA_LOHENGRIN_03.gif',
+		type: 'column',
+	},
+	{
+		text: 'BASIC and AUREA, are the main characters of this story and TEO (dog) and CELESTE (cat) their unconditional friends. All of them, made by modeling clay of very lively colors that are highlighted over the background. ',
+		image: '/src/assets/content/BASIC_PERSONAJE.gif',
+		type: 'rowReverse',
+	}
+]
+---
+
+<Layout title="Basic">
+	<section class="h-screen gradient flex justify-between items-center relative pt-32 px-32" id="home">
+		<header class="w-full flex justify-between items-center h-16 fixed top-0 left-0 z-50 px-32">
+			<div class="w-36">
+				<img src="src/assets/logos/BASIC.gif" alt="basic Logo">
+			</div>
+			<Navbar />
+		</header>
+		<div class="flex flex-col font-gotham">
+			<p class="font-bold leading-none mainText">
+				{mainText.map((text, index) => (
+				<span class={`${text.cssClasses}`}>
+					{text.text} {text.lineBreak && <br />}
+				</span>
+				))}
+			</p>
+			<p class="mt-10 font-medium text-lg text-[#475694]">Basic is the adventure of four friends who in <br>
+				different and fun episodes they discover the basic
+				<br>
+				concepts of art.
+			</p>
+			<div class="mt-8 flex items-center justify-start">
+				<a href="https://www.youtube.com/watch?v=QcCMY3GM20A&ab_channel=MiSe%C3%B1al" target="_blank">
+					<Icon pack="mdi" name="play-circle" class="text-white h-9 w-11 bg-[#FF1E7C] rounded-md" />
+
+				</a>
+				<a href="https://www.youtube.com/watch?v=QcCMY3GM20A&ab_channel=MiSe%C3%B1al" target="_blank">
+					<p class="ml-3 text-[#475694] font-gotham font-medium">TRAILER</p>
+				</a>
+			</div>
+		</div>
+		<ShapeFrames client:visible slides={slides} />
+	</section>
+	<section class="w-full flex justify-center gap-24 px-5 py-9">
+		<img class="w-72 drop-shadow-logo" src="src/assets/logos/LOGO_SEÑAL_COL.gif" alt="señal col Logo">
+		<img class="w-72 drop-shadow-logo" src="src/assets/logos/LOGO_SIGNOS.gif" alt="signos Logo">
+	</section>
+	<section class="flex justify-center items-center w-full pt-24 pb-12 gap-3">
+		<FeatureCard background="bg-[#6927F420]" cardText={dataCardOne} icon={iconCardOne} href="#content" />
+		<FeatureCard background="bg-[#D8248F20]" cardText={dataCardTwo} icon={iconCardTwo} href="" />
+		<FeatureCard background="bg-[#31EA2D20]" cardText={dataCardThree} icon={iconCardThree} href="" />
+		<FeatureCard background="bg-[#27C3F420]" cardText={dataCardFour} icon={iconCardFour} href="" />
+	</section>
+	<section class="h-screen w-full relative" id="content">
+		<img class="absolute left-0 top-0 w-1/4 opacity-10" src="/src/assets/backgrounds/BACK_01_02.gif"
+			alt="background">
+		<img class="absolute right-0 bottom-0 w-5/12 opacity-10" src="/src/assets/backgrounds/BACK_01_03.gif"
+			alt="background">
+		{contentCards.map((card, index) => (
+		<ContentCard text={card.text} image={card.image} type={card.type} />
+		))}
+	</section>
+</Layout>
+
+<style>
+	.gradient {
+		background: linear-gradient(180deg, rgba(43, 144, 236, 1) 0%, rgba(137, 197, 225, 1) 35%, rgba(246, 250, 252, 1) 62%, rgba(255, 254, 254, 1) 100%);
+	}
+
+	.mainText {
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	.nav-scrolled {
+		background: rgba(137, 197, 225, 0.90);
+	}
+</style>

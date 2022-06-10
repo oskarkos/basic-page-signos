@@ -1,0 +1,33 @@
+---
+export interface Props {
+    text: string,
+    image: string,
+    type: string,
+}
+
+const types = {
+    column: {
+        div: 'flex-col',
+        img: 'w-full',
+    },
+    columnReverse: {
+        div: 'flex-col-reverse',
+        img: 'w-full',
+    },
+    row: {
+        div: 'flex-row',
+        img: 'w-1/2',
+    },
+    rowReverse: {
+        div: 'flex-row-reverse',
+        img: 'w-1/2',
+    },
+}
+
+const { text, image, type } = Astro.props;
+---
+
+<div class={`w-full h-full p-16 flex ${types[type].div} justify-center items-center`}>
+    <p>{text}</p>
+    <img class={types[type].img} src={image} alt={image.replace(/^.*\//, '' )}>
+</div>
