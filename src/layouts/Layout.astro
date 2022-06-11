@@ -19,10 +19,39 @@ const { title } = Astro.props as Props;
 <body>
   <slot />
   <script is:inline>
+    document.getElementById('art').style.display = 'flex';
+    document.getElementById('3d').style.display = 'none';
+    document.getElementById('music').style.display = 'none';
+    document.getElementById('basic').style.display = 'none';
+
     window.addEventListener('scroll', function () {
       let header = document.querySelector('header');
       let windowPosition = window.scrollY > 150;
       header.classList.toggle('nav-scrolled', windowPosition);
+    })
+    document.getElementById('goToArt').addEventListener('click', function () {
+      document.getElementById('art').style.display = 'flex';
+      document.getElementById('3d').style.display = 'none';
+      document.getElementById('music').style.display = 'none';
+      document.getElementById('basic').style.display = 'none';
+    })
+    document.getElementById('goTo3d').addEventListener('click', function () {
+      document.getElementById('art').style.display = 'none';
+      document.getElementById('3d').style.display = 'flex';
+      document.getElementById('music').style.display = 'none';
+      document.getElementById('basic').style.display = 'none';
+    })
+    document.getElementById('goToMusic').addEventListener('click', function () {
+      document.getElementById('art').style.display = 'none';
+      document.getElementById('3d').style.display = 'none';
+      document.getElementById('music').style.display = 'flex';
+      document.getElementById('basic').style.display = 'none';
+    })
+    document.getElementById('goToBasic').addEventListener('click', function () {
+      document.getElementById('art').style.display = 'none';
+      document.getElementById('3d').style.display = 'none';
+      document.getElementById('music').style.display = 'none';
+      document.getElementById('basic').style.display = 'flex';
     })
   </script>
 </body>

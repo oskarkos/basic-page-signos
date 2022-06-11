@@ -1,14 +1,15 @@
 <template>
   <img
     v-if="currentSlide === index"
-    class="w-[34rem] h-[34rem] overflow-hidden rounded-b-full absolute bottom-0"
+    class="absolute bottom-0"
+    :class="TypeStyle"
     :src="slide"
     :alt="slide.replace(/^.*\//, '')"
   />
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 export default defineComponent({
   props: {
     slide: {
@@ -23,9 +24,24 @@ export default defineComponent({
       type: Number,
       required: true,
     },
+    type: {
+      type: String,
+      default: "circular",
+    },
   },
-  setup: () => {
-    return {};
+  setup: (props) => {
+    const TypeStyle = computed(() => {
+      if (props.type === "circular") {
+        return "w-[34rem] h-[34rem] rounded-b-full";
+      } else if (props.type === "rectangular") {
+        return "w-[30rem] h-[40rem] rounded-b-[3.75rem]";
+      } else {
+        return "w-[34rem] h-[34rem] rounded-b-full";
+      }
+    });
+    return {
+      TypeStyle
+    };
   },
 });
 </script>

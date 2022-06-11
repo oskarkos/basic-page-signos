@@ -6,6 +6,7 @@ export interface Props {
     cardText: TextColors[],
     icon: Icon,
     href: string,
+    id: string,
 }
 type Icon = {
     pack: string,
@@ -17,11 +18,11 @@ type TextColors = {
     lineBreak: boolean,
     cssClasses?: string;
 }
-const { background, cardText, icon, href } = Astro.props;
+const { background, cardText, icon, href, id } = Astro.props;
 ---
 
 <a class={`flex flex-wrap justify-center items-center rounded-2xl w-56 h-44 p-4 relative cursor-pointer border-2
-    border-white card ${background}`} href={href}>
+    border-white card ${background}`} href={href} id={id}>
     <Icon class={`absolute -top-6 left-4 w-12 h-12 ${icon.cssClasses}`} pack={icon.pack} name={icon.name}></Icon>
     <p class="font-extrabold leading-none mainText">
         {cardText.map((text: TextColors, index: number) => (

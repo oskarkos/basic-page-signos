@@ -3,31 +3,36 @@ export interface Props {
     text: string,
     image: string,
     type: string,
+    id: string,
 }
 
 const types = {
     column: {
-        div: 'flex-col',
-        img: 'w-full',
+        div: 'flex-col justify-end items-center',
+        img: 'w-3/5 h-auto',
+        text: 'max-w-full text-center',
     },
     columnReverse: {
-        div: 'flex-col-reverse',
-        img: 'w-full',
+        div: 'flex-col-reverse justify-center items-center',
+        img: 'w-4/5 h-auto',
+        text: 'max-w-full text-center',
     },
     row: {
-        div: 'flex-row',
-        img: 'w-1/2',
+        div: 'flex-row justify-center items-end',
+        img: 'w-1/2 h-auto',
+        text: 'max-w-md',
     },
     rowReverse: {
-        div: 'flex-row-reverse',
-        img: 'w-1/2',
+        div: 'flex-row-reverse justify-center items-end',
+        img: 'w-1/2 h-auto',
+        text: 'max-w-md text-right',
     },
 }
 
-const { text, image, type } = Astro.props;
+const { text, image, type, id } = Astro.props;
 ---
 
-<div class={`w-full h-full p-16 flex ${types[type].div} justify-center items-center`}>
-    <p>{text}</p>
+<div class={`w-full h-full px-14 flex relative z-30 ${types[type].div}`} id={id}>
+    <p class={`font-gotham font-medium text-3xl text-[#475694] self-center ${types[type].text}`}>{text}</p>
     <img class={types[type].img} src={image} alt={image.replace(/^.*\//, '' )}>
 </div>

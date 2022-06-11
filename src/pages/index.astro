@@ -48,120 +48,143 @@ const slides = [
 	"/src/assets/img/PAGINA_07.gif"
 ];
 
-const dataCardOne = [
-	{
-		text: "Art",
-		cssClasses: "text-[#6F55A5] text-[3rem]",
-		lineBreak: false,
-	},
-	{
-		text: "and",
-		cssClasses: "text-[#6F55A5] text-[2rem]",
-		lineBreak: true,
-	},
-	{
-		text: "Design",
-		cssClasses: "text-[#6F55A5] text-[3rem]",
-		lineBreak: false,
-	},
+const slidesContact = [
+	"/src/assets/img/BASIC_01.gif",
 ];
-const dataCardTwo = [
+
+const cards = [
 	{
-		text: "3D",
-		cssClasses: "text-[#E31B6F] text-[3rem]",
-		lineBreak: false,
+		text: [
+			{
+				text: "Art",
+				cssClasses: "text-[#6F55A5] text-[3rem]",
+				lineBreak: false,
+			},
+			{
+				text: "and",
+				cssClasses: "text-[#6F55A5] text-[2rem]",
+				lineBreak: true,
+			},
+			{
+				text: "Design",
+				cssClasses: "text-[#6F55A5] text-[3rem]",
+				lineBreak: false,
+			},
+		],
+		icon: {
+			pack: 'ic',
+			name: 'baseline-color-lens',
+			cssClasses: 'text-[#6F55A5] rotate-270'
+		},
+		background: 'bg-[#6927F420]',
 	},
 	{
-		text: "style",
-		cssClasses: "text-[#E31B6F] text-[2rem]",
-		lineBreak: true,
+		text: [
+			{
+				text: "3D",
+				cssClasses: "text-[#E31B6F] text-[3rem]",
+				lineBreak: false,
+			},
+			{
+				text: "style",
+				cssClasses: "text-[#E31B6F] text-[2rem]",
+				lineBreak: true,
+			},
+			{
+				text: "Look",
+				cssClasses: "text-[#E31B6F] text-[3rem]",
+				lineBreak: false,
+			},
+		],
+		icon:
+		{
+			pack: 'ic',
+			name: 'baseline-water-drop',
+			cssClasses: 'text-[#E31B6F]'
+		},
+		background: 'bg-[#D8248F20]',
 	},
 	{
-		text: "Look",
-		cssClasses: "text-[#E31B6F] text-[3rem]",
-		lineBreak: false,
-	},
-];
-const dataCardThree = [
-	{
-		text: "Classical",
-		cssClasses: "text-[#1D641B] text-[2rem]",
-		lineBreak: false,
-	},
-	{
-		text: "and",
-		cssClasses: "text-[#1D641B] text-[1rem]",
-		lineBreak: true,
-	},
-	{
-		text: "Symphonic",
-		cssClasses: "text-[#1D641B] text-[2rem]",
-		lineBreak: true,
-	},
-	{
-		text: "Music",
-		cssClasses: "text-[#1D641B] text-[3rem]",
-		lineBreak: false,
-	},
-];
-const dataCardFour = [
-	{
-		text: "We",
-		cssClasses: "text-[#3858AD] text-[3rem]",
-		lineBreak: false,
+		text: [
+			{
+				text: "Classical",
+				cssClasses: "text-[#1D641B] text-[2rem]",
+				lineBreak: false,
+			},
+			{
+				text: "and",
+				cssClasses: "text-[#1D641B] text-[1rem]",
+				lineBreak: true,
+			},
+			{
+				text: "Symphonic",
+				cssClasses: "text-[#1D641B] text-[2rem]",
+				lineBreak: true,
+			},
+			{
+				text: "Music",
+				cssClasses: "text-[#1D641B] text-[3rem]",
+				lineBreak: false,
+			},
+		],
+		icon: {
+			pack: 'bi',
+			name: 'music-note',
+			cssClasses: 'text-[#1D641B]'
+		},
+		background: 'bg-[#31EA2D20]',
 	},
 	{
-		text: "are",
-		cssClasses: "text-[#3858AD] text-[2rem]",
-		lineBreak: true,
-	},
-	{
-		text: "Basic",
-		cssClasses: "text-[#3858AD] text-[3rem]",
-		lineBreak: false,
-	},
-];
-const iconCardOne = {
-	pack: 'ic',
-	name: 'baseline-color-lens',
-	cssClasses: 'text-[#6F55A5] rotate-270'
-}
-const iconCardTwo = {
-	pack: 'ic',
-	name: 'baseline-water-drop',
-	cssClasses: 'text-[#E31B6F]'
-}
-const iconCardThree = {
-	pack: 'bi',
-	name: 'music-note',
-	cssClasses: 'text-[#1D641B]'
-}
-const iconCardFour = {
-	pack: 'mdi',
-	name: 'account',
-	cssClasses: 'text-[#3858AD]'
-}
+		text: [
+			{
+				text: "We",
+				cssClasses: "text-[#3858AD] text-[3rem]",
+				lineBreak: false,
+			},
+			{
+				text: "are",
+				cssClasses: "text-[#3858AD] text-[2rem]",
+				lineBreak: true,
+			},
+			{
+				text: "Basic",
+				cssClasses: "text-[#3858AD] text-[3rem]",
+				lineBreak: false,
+			},
+		],
+		icon: {
+			pack: 'mdi',
+			name: 'account',
+			cssClasses: 'text-[#3858AD]'
+		},
+		background: 'bg-[#27C3F420]',
+	}
+]
 
 const contentCards = [
 	{
 		text: 'BASIC is a program which objective is to identify the main basic design concepts that you can find in art and nature, and that are a fundamental part of any creation. Additionally, relevant artists, artworks and its movements were selected in order to easily identify some concepts of design.',
 		image: '/src/assets/content/ART_01.gif',
 		type: 'row',
+		id: 'art',
 	},
 	{
 		text: 'The project is developed in 3D digital animation. The characters do not have mouth, for this reason, their expressions will be recognized through the movement of their eyebrows, eyes and body gestures. Their bodies are constituted of basic shapes such as spheres, cubes and cylinders in bright and cheerful colors.',
 		image: '/src/assets/content/3D_STYLE_01.gif',
 		type: 'columnReverse',
+		id: '3d',
 	},
 	{
 		text: 'BASIC has a symphonic musical treatment, mainly winds  and strings instruments, which brings each episode a magical personality, body, volume and will mainly improve the emotions of all audiences.',
 		image: '/src/assets/content/SINFONICA_LOHENGRIN_03.gif',
 		type: 'column',
+		id: 'music',
 	},
 	{
 		text: 'BASIC and AUREA, are the main characters of this story and TEO (dog) and CELESTE (cat) their unconditional friends. All of them, made by modeling clay of very lively colors that are highlighted over the background. ',
 		image: '/src/assets/content/BASIC_PERSONAJE.gif',
 		type: 'rowReverse',
+		id: 'basic',
 	}
 ]
 ---
@@ -204,19 +227,22 @@ const contentCards = [
 		<img class="w-72 drop-shadow-logo" src="src/assets/logos/LOGO_SIGNOS.gif" alt="signos Logo">
 	</section>
 	<section class="flex justify-center items-center w-full pt-24 pb-12 gap-3">
-		<FeatureCard background="bg-[#6927F420]" cardText={dataCardOne} icon={iconCardOne} href="#content" />
-		<FeatureCard background="bg-[#D8248F20]" cardText={dataCardTwo} icon={iconCardTwo} href="" />
-		<FeatureCard background="bg-[#31EA2D20]" cardText={dataCardThree} icon={iconCardThree} href="" />
-		<FeatureCard background="bg-[#27C3F420]" cardText={dataCardFour} icon={iconCardFour} href="" />
+		{cards.map((card, index) => (
+		<FeatureCard background={card.background} cardText={card.text} icon={card.icon} href="#content" id="goToArt" />
+		))}
 	</section>
 	<section class="h-screen w-full relative" id="content">
-		<img class="absolute left-0 top-0 w-1/4 opacity-10" src="/src/assets/backgrounds/BACK_01_02.gif"
+		<img class="absolute left-0 top-0 w-1/4 opacity-10 z-10" src="/src/assets/backgrounds/BACK_01_02.gif"
 			alt="background">
-		<img class="absolute right-0 bottom-0 w-5/12 opacity-10" src="/src/assets/backgrounds/BACK_01_03.gif"
+		<img class="absolute right-0 bottom-0 w-5/12 opacity-10 z-10" src="/src/assets/backgrounds/BACK_01_03.gif"
 			alt="background">
 		{contentCards.map((card, index) => (
-		<ContentCard text={card.text} image={card.image} type={card.type} />
+		<ContentCard text={card.text} image={card.image} type={card.type} id={card.id} />
 		))}
+	</section>
+	<section class="w-fyll h-screen p-14 flex justify-center items-center" id="contact">
+		<ShapeFrames client:visible slides={slidesContact} type="rectangular" />
+		<div></div>
 	</section>
 </Layout>
 

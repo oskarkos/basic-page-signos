@@ -1,6 +1,7 @@
 <template>
   <div
-    class="frameShape w-[30rem] h-[30rem] bg-[#FF1E7C50] rounded-full border-[1rem] border-white relative"
+    :class="TypeStyle"
+    class="frameShape border-[1rem] border-white relative"
   >
     <Items
       v-for="(slide, index) in slides"
@@ -8,12 +9,13 @@
       :key="`item-${index}`"
       :current-slide="currentSlide"
       :index="index"
+      :type="type"
     />
   </div>
 </template>
 
 <script lang="ts">
-import { ref, onBeforeUnmount, onMounted } from "vue";
+import { ref, onBeforeUnmount, onMounted, computed } from "vue";
 import Items from "./components/items.vue";
 export default {
   components: { Items },
@@ -26,10 +28,24 @@ export default {
       type: Number,
       default: 5000,
     },
+    type: {
+      type: String,
+      default: "circular",
+    },
   },
   setup(props) {
     const currentSlide = ref(0);
     const slideInterval = ref(null);
+
+    const TypeStyle = computed(() => {
+      if (props.type === "circular") {
+        return "w-[30rem] h-[30rem] bg-[#FF1E7C50] rounded-full";
+      } else if (props.type === "rectangular") {
+        return "w-[27.5rem] h-[35rem] bg-[#07C0FB30] rounded-[3.75rem]";
+      } else {
+        return "w-[30rem] h-[30rem] bg-[#FF1E7C50] rounded-full";
+      }
+    });
 
     function setCurrentSlide(index) {
       currentSlide.value = index;
@@ -63,6 +79,7 @@ export default {
     return {
       currentSlide,
       slideInterval,
+      TypeStyle,
     };
   },
 };
