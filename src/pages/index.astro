@@ -247,21 +247,24 @@ const contentCards = [
 		<ContentCard text={card.text} image={card.image} type={card.type} id={card.id} />
 		))}
 	</section>
-	<section class="w-full h-full xl:h-screen px-14 py-20 flex flex-col lg:flex-row justify-around items-center font-gotham" id="contact">
+	<section
+		class="w-full h-full xl:h-screen px-5 xl:px-14 py-20 flex flex-col lg:flex-row justify-around items-center font-gotham"
+		id="contact">
 		<ShapeFrames client:visible slides={slidesContact} type="rectangular" />
-		<div class="h-[40rem] xl:h-screen px-4 xl:px-9 py-12 flex flex-col font-light justify-between items-start">
-			<div class="w-[28rem] flex items-center self-center justify-center bg-[#E31B6F13] rounded-lg text-xl">
+		<div
+			class="h-[40rem] xl:h-screen w-full sm:w-[26rem] md:w-[30rem] xl:w-[34rem] 2xl:w-[38rem] md:px-5 xl:px-9 py-12 flex flex-col font-light justify-between items-start text-lg xl:text-2xl">
+			<div class="flex items-center px-8 self-center justify-center bg-[#E31B6F13] rounded-lg text-xl">
 				<p class="text-[#5A0A35]">MORE INFORMATION</p>
 				<Icon pack="mdi" name="file-pdf-box" class="w-11 text-[#5A0A35]" />
 			</div>
-			<p class="text-3xl text-[#475694] font-medium">CONTACT US</p>
+			<p class="text-[#475694] font-medium">CONTACT US</p>
 			<ContactInfo icon={['ic', 'baseline-email' ]} text="INFO@SIGNOS.COM.CO" iconStyles="text-[#B02A8D]"
-				textStyles="text-[#74185C] text-2xl" />
+				textStyles="text-[#74185C]" />
 			<ContactInfo icon={['ic', 'baseline-place' ]}
 				text="Car. 14a No. 2A-08 San Pablo - Zipaquira, Cundinamarca - Colombia" iconStyles="text-[#9ECF4D]"
-				textStyles="text-[#536C29] text-xl" />
+				textStyles="text-[#536C29]" />
 			<ContactInfo icon={['ic', 'baseline-local-phone' ]} text="+57 313 3779890" iconStyles="text-[#FBB860]"
-				textStyles="text-[#B2854A] text-2xl" />
+				textStyles="text-[#B2854A]" />
 			<div class="flex gap-7">
 				<a href="https://www.linkedin.com/company/signos-studio-s.a.s./" target="_blank">
 					<Icon pack="mdi" name="linkedin" class="w-11 text-[#475694]" />
