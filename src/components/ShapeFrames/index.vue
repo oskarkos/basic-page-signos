@@ -1,7 +1,7 @@
 <template>
   <div
     :class="TypeStyle"
-    class="frameShape border-[1rem] border-white relative"
+    class="mt-20 lg:mt-0 frameShape border-[1rem] border-white relative"
   >
     <Items
       v-for="(slide, index) in slides"
@@ -39,11 +39,11 @@ export default {
 
     const TypeStyle = computed(() => {
       if (props.type === "circular") {
-        return "w-[30rem] h-[30rem] bg-[#FF1E7C50] rounded-full";
+        return "w-[25rem] h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
       } else if (props.type === "rectangular") {
-        return "w-[27.5rem] h-[35rem] bg-[#07C0FB30] rounded-[3.75rem]";
+        return "w-[22.5rem] h-[22.5rem] xl:w-[27.5rem] xl:h-[35rem] bg-[#07C0FB30] rounded-[3.75rem]";
       } else {
-        return "w-[30rem] h-[30rem] bg-[#FF1E7C50] rounded-full";
+        return "w-[25rem] h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
       }
     });
 

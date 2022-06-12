@@ -13,17 +13,17 @@ const types = {
         text: 'max-w-full text-center',
     },
     columnReverse: {
-        div: 'flex-col-reverse justify-center items-center',
+        div: 'flex-col xl:flex-col-reverse justify-center items-center',
         img: 'w-4/5 h-auto',
         text: 'max-w-full text-center',
     },
     row: {
-        div: 'flex-row justify-center items-end',
-        img: 'w-1/2 h-auto',
+        div: 'flex-col xl:flex-row justify-center items-center xl:items-end',
+        img: 'w-full md:w-3/4 xl:w-1/2 h-auto mt-8 xl:mt-0',
         text: 'max-w-md',
     },
     rowReverse: {
-        div: 'flex-row-reverse justify-center items-end',
+        div: 'flex-col md:flex-row-reverse justify-center items-end',
         img: 'w-1/2 h-auto',
         text: 'max-w-md text-right',
     },
@@ -33,6 +33,6 @@ const { text, image, type, id } = Astro.props;
 ---
 
 <div class={`w-full h-full px-14 w-/ flex relative z-30 ${types[type].div}`} id={id}>
-    <p class={`font-gotham font-medium text-3xl text-[#475694] self-center ${types[type].text}`}>{text}</p>
+    <p class={`font-gotham font-medium text-xl text-center text-[#475694] self-center ${types[type].text} xl:text-2xl`}>{text}</p>
     <img class={types[type].img} src={image} alt={image.replace(/^.*\//, '' )}>
 </div>
