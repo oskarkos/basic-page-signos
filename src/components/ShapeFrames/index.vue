@@ -39,11 +39,11 @@ export default {
 
     const TypeStyle = computed(() => {
       if (props.type === "circular") {
-        return "w-[25rem] h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
+        return "w-[20rem] h-[20rem] sm:w-[25rem] sm:h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
       } else if (props.type === "rectangular") {
-        return "w-[22.5rem] h-[22.5rem] xl:w-[27.5rem] xl:h-[35rem] bg-[#07C0FB30] rounded-[3.75rem]";
+        return "w-[17.5rem] h-[25rem] sm:w-[22.5rem] sm:h-[30rem] xl:w-[27.5rem] xl:h-[35rem] bg-[#07C0FB30] rounded-[3.75rem]";
       } else {
-        return "w-[25rem] h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
+        return "w-[20rem] h-[20rem] sm:w-[25rem] sm:h-[25rem] xl:w-[30rem] xl:h-[30rem] bg-[#FF1E7C50] rounded-full";
       }
     });
 
