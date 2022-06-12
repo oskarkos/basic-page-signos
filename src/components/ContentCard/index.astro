@@ -9,7 +9,7 @@ export interface Props {
 const types = {
     column: {
         div: 'flex-col justify-end items-center',
-        img: 'w-3/5 h-auto',
+        img: 'w-7/12 h-auto',
         text: 'max-w-full text-center',
     },
     columnReverse: {
@@ -32,7 +32,7 @@ const types = {
 const { text, image, type, id } = Astro.props;
 ---
 
-<div class={`w-full h-full px-14 flex relative z-30 ${types[type].div}`} id={id}>
+<div class={`w-full h-full px-14 w-/ flex relative z-30 ${types[type].div}`} id={id}>
     <p class={`font-gotham font-medium text-3xl text-[#475694] self-center ${types[type].text}`}>{text}</p>
     <img class={types[type].img} src={image} alt={image.replace(/^.*\//, '' )}>
 </div>

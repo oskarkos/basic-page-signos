@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface props {
+    iconStyles: string,
+    textStyles: string,
+    text: string,
+    icon: string[],
+}
+
+const { iconStyles, textStyles, text, icon } = Astro.props;
+---
+
+<div class="flex items-center">
+    <Icon pack={icon[0]} name={icon[1]} class={`w-11 ${iconStyles}`} />
+    <p class={`ml-6 ${textStyles}`}>{text}</p>
+</div>
