@@ -1,10 +1,33 @@
 ---
 import ItemMenu from './components/ItemMenu.astro';
+import { Icon } from 'astro-icon'
 ---
 
 <div class="hidden sm:flex gap-5 cursor-pointer">
     <ItemMenu label="home" href="#home" />
-    <ItemMenu label="trailer" href="https://www.youtube.com/watch?v=QcCMY3GM20A&ab_channel=MiSe%C3%B1al"
-        isLink={true} />
+    <ItemMenu label="developing" href="#developing" />
     <ItemMenu label="contact" href="#contact" />
 </div>
+
+<div class="block sm:hidden" id="menuBurguer">
+    <Icon pack="eva" name="menu-outline" class="text-white w-11 cursor-pointer" />
+</div>
+
+<div class="block sm:hidden">
+    <div class="w-2/3 h-screen justify-center items-end px-10 gap-y-16 flex-col absolute top-0 right-0 mt-16 lateralMenu"
+        id="lateralMenu">
+        <ItemMenu label="home" href="#home" isLateralMenu={true} />
+        <ItemMenu label="developing" href="#developing" isLateralMenu={true} />
+        <ItemMenu label="contact" href="#contact" isLateralMenu={true} />
+    </div>
+</div>
+
+<style>
+    .lateralMenu {
+        background: rgba(43, 144, 236, 0.50);
+    }
+
+    .nav-scrolled {
+        background: rgba(137, 197, 225);
+    }
+</style>

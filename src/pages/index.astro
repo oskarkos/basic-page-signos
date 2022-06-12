@@ -202,7 +202,9 @@ const contentCards = [
 			<div class="w-36">
 				<img src="/assets/logos/BASIC.gif" alt="basic Logo">
 			</div>
-			<Navbar />
+			<div class="w-full flex justify-end items-center">
+				<Navbar />
+			</div>
 		</header>
 		<div class="flex flex-col font-gotham">
 			<p class="font-bold leading-none mainText">
@@ -233,7 +235,7 @@ const contentCards = [
 		<img class="w-72 drop-shadow-logo" src="/assets/logos/LOGO_SEÑAL_COL.gif" alt="señal col Logo">
 		<img class="w-72 drop-shadow-logo" src="/assets/logos/LOGO_SIGNOS.gif" alt="signos Logo">
 	</section>
-	<section class="flex flex-wrap justify-center items-center w-full pt-24 pb-12 gap-3 gap-y-7">
+	<section class="flex flex-wrap justify-center items-center w-full pt-24 pb-12 gap-3 gap-y-7" id="developing">
 		{cards.map((card, index) => (
 		<FeatureCard background={card.background} cardText={card.text} icon={card.icon} href="#content" id={card.id} />
 		))}

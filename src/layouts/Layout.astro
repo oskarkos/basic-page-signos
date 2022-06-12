@@ -19,17 +19,31 @@ const { title } = Astro.props as Props;
 <body>
   <slot />
   <script is:inline>
+    var menuOpened = false;
     window.addEventListener('load', function () {
+      document.getElementById('lateralMenu').style.display = 'none';
       document.getElementById('art').style.display = 'flex';
       document.getElementById('3d').style.display = 'none';
       document.getElementById('music').style.display = 'none';
       document.getElementById('basic').style.display = 'none';
     })
 
+    document.getElementById('menuBurguer').addEventListener('click', function() {
+      if(menuOpened) {
+        document.getElementById('lateralMenu').style.display = 'none';
+        menuOpened = false;
+      } else {
+        document.getElementById('lateralMenu').style.display = 'flex';
+        menuOpened = true;
+      }
+    })
+
     window.addEventListener('scroll', function () {
       let header = document.querySelector('header');
+      let lateralMenu = document.getElementById('lateralMenu');
       let windowPosition = window.scrollY > 150;
       header.classList.toggle('nav-scrolled', windowPosition);
+      lateralMenu.classList.toggle('nav-scrolled', windowPosition);
     })
     document.getElementById('goToArt').addEventListener('click', function () {
       document.getElementById('art').style.display = 'flex';
