@@ -32,7 +32,7 @@ export default defineComponent({
   setup: (props) => {
     const TypeStyle = computed(() => {
       if (props.type === "circular") {
-        return "w-[24rem] h-[24rem] sm:w-[29rem] sm:h-[29rem] xl:w-[34rem] xl:h-[34rem] rounded-b-full";
+        return "w-[24rem] sm:w-[29rem] xl:w-[34rem] xl:h-[34rem] rounded-b-full";
       } else if (props.type === "rectangular") {
         return "w-[15rem] h-[25rem] sm:w-[20rem] sm:h-[30rem] xl:w-[30rem] xl:h-[40rem] rounded-b-[3.75rem]";
       } else {

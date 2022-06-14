@@ -40,13 +40,13 @@ const mainText: TextColors[] = [{
 }];
 
 const slides = [
-	"/assets/img/PAGINA_01.gif",
-	"/assets/img/PAGINA_02.gif",
-	"/assets/img/PAGINA_03.gif",
-	"/assets/img/PAGINA_04.gif",
-	"/assets/img/PAGINA_05.gif",
-	"/assets/img/PAGINA_06.gif",
-	"/assets/img/PAGINA_07.gif"
+	"/assets/img/PAGINA_PNG_01.png",
+	"/assets/img/PAGINA_PNG_02.png",
+	"/assets/img/PAGINA_PNG_03.png",
+	"/assets/img/PAGINA_PNG_04.png",
+	"/assets/img/PAGINA_PNG_05.png",
+	"/assets/img/PAGINA_PNG_06.png",
+	"/assets/img/PAGINA_PNG_07.png"
 ];
 
 const slidesContact = [
@@ -181,13 +181,13 @@ const contentCards = [
 	},
 	{
 		text: 'BASIC has a symphonic musical treatment, mainly winds  and strings instruments, which brings each episode a magical personality, body, volume and will mainly improve the emotions of all audiences.',
-		image: '/assets/content/SINFONICA_LOHENGRIN_03.gif',
+		image: '/assets/content/SINFONICA_LOHENGRIN_04.png',
 		type: 'column',
 		id: 'music',
 	},
 	{
 		text: 'BASIC and AUREA, are the main characters of this story and TEO (dog) and CELESTE (cat) their unconditional friends. All of them, made by modeling clay of very lively colors that are highlighted over the background. ',
-		image: '/assets/content/BASIC_PERSONAJE.gif',
+		image: '/assets/content/BASIC_PERSONAJE_01.png',
 		type: 'rowReverse',
 		id: 'basic',
 	}
@@ -196,7 +196,7 @@ const contentCards = [
 
 <Layout title="Basic">
 	<section
-		class="flex flex-col h-full items-center relative pt-20 px-3 lg:pt-28 lg:px-24 xl:pt-32 xl:px-32 xl:h-screen lg:flex-row lg:justify-between gradient "
+		class="flex flex-col h-full items-center relative pt-20 pb-9 px-3 sm:px-6 lg:pt-28 lg:px-24 xl:pt-32 xl:px-32 xl:h-screen lg:flex-row lg:justify-between gradient "
 		id="home">
 		<header class="w-full flex justify-between items-center h-16 fixed top-0 left-0 z-50 px-8 md:px-16 lg:px-32">
 			<div class="w-36">
@@ -206,7 +206,7 @@ const contentCards = [
 				<Navbar />
 			</div>
 		</header>
-		<div class="flex flex-col font-gotham">
+		<div class="flex flex-col font-gotham w-full lg:w-1/2">
 			<p class="font-bold leading-none mainText">
 				{mainText.map((text, index) => (
 				<span class={`${text.cssClasses}`}>
@@ -214,9 +214,8 @@ const contentCards = [
 				</span>
 				))}
 			</p>
-			<p class="mt-10 font-medium text-lg text-[#475694]">Basic is the adventure of four friends who in <br>
+			<p class="mt-10 font-medium text-lg text-[#475694]">Basic is the adventure of four friends who in
 				different and fun episodes they discover the basic
-				<br>
 				concepts of art.
 			</p>
 			<div class="mt-8 flex items-center justify-start">
@@ -231,16 +230,21 @@ const contentCards = [
 		</div>
 		<ShapeFrames client:visible slides={slides} />
 	</section>
-	<section class="w-full flex flex-col lg:flex-row items-center justify-center gap-24 px-5 py-20">
-		<img class="w-72 drop-shadow-logo" src="/assets/logos/LOGO_SEÑAL_COL.gif" alt="señal col Logo">
-		<img class="w-72 drop-shadow-logo" src="/assets/logos/LOGO_SIGNOS.gif" alt="signos Logo">
+	<section
+		class="w-full flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-24 px-3 sm:px-5 py-9 sm:py-20">
+		<a href="https://www.rtvcplay.co/ninos/basic" target="_blank">
+			<img class="w-48 xl:w-72 drop-shadow-logo" src="/assets/logos/LOGO_SEÑAL_COL.gif" alt="señal col Logo">
+		</a>
+		<a href="http://www.signos.com.co/" target="_blank">
+			<img class="w-48 xl:w-72 drop-shadow-logo" src="/assets/logos/LOGO_SIGNOS.gif" alt="signos Logo">
+		</a>
 	</section>
 	<section class="flex flex-wrap justify-center items-center w-full pt-24 pb-12 gap-3 gap-y-7" id="developing">
 		{cards.map((card, index) => (
 		<FeatureCard background={card.background} cardText={card.text} icon={card.icon} href="#content" id={card.id} />
 		))}
 	</section>
-	<section class="h-full xl:h-screen w-full py-20 lg:py-0 relative" id="content">
+	<section class="h-full xl:h-screen w-full py-20 xl:py-0 relative" id="content">
 		<img class="absolute left-0 top-0 w-1/4 opacity-10 z-10" src="/assets/backgrounds/BACK_01_02.gif"
 			alt="background">
 		<img class="absolute right-0 bottom-0 w-5/12 opacity-10 z-10" src="/assets/backgrounds/BACK_01_03.gif"
@@ -250,7 +254,7 @@ const contentCards = [
 		))}
 	</section>
 	<section
-		class="w-full h-full xl:h-screen px-5 xl:px-14 py-20 flex flex-col lg:flex-row justify-around items-center font-gotham"
+		class="w-full h-full xl:h-screen px-5 xl:px-14 py-14 mt-4 md:py-20 md:mt-10 flex flex-col lg:flex-row justify-around items-center font-gotham"
 		id="contact">
 		<ShapeFrames client:visible slides={slidesContact} type="rectangular" />
 		<div
@@ -267,7 +271,7 @@ const contentCards = [
 				textStyles="text-[#536C29]" />
 			<ContactInfo icon={['ic', 'baseline-local-phone' ]} text="+57 313 3779890" iconStyles="text-[#FBB860]"
 				textStyles="text-[#B2854A]" />
-			<div class="flex gap-7">
+			<div class="flex gap-7 self-center lg:self-start">
 				<a href="https://www.linkedin.com/company/signos-studio-s.a.s./" target="_blank">
 					<Icon pack="mdi" name="linkedin" class="w-11 text-[#475694]" />
 				</a>
